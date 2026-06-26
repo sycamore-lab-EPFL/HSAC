@@ -1,0 +1,16 @@
+# Nominal German brick sliced on its longest diagonal
+v 0 0 120
+v 0 80 120
+v 240 0 0
+v 240 0 120
+v 0 0 0
+v 0 80 0
+f 6 5 1
+f 6 1 2
+f 6 3 5 
+f 5 3 4 
+f 5 4 1
+f 1 4 2
+f 3 6 2
+f 3 2 4
+

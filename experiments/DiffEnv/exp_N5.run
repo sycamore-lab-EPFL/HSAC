@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 8
+#SBATCH --partition l40s
+#SBATCH --gpus 1
+#SBATCH --time 24:00:00
+module load gurobi
+cd /home/grvallat/RoboticConstruction/code/
+/home/grvallat/venvs/venv-opt/bin/python /home/grvallat/RoboticConstruction/code/scripts/experiments/DiffEnv/run_exp_N5.py

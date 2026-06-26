@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../BlockStability"
+		},
+		{
+			"path": "../../../../../../../BlockStability"
+		}
+	],
+	"settings": {}
+}
