@@ -12,7 +12,7 @@ from torch.nn import GELU
 import wandb
 from .helper import device, floatType, intType
 import numpy as np
-from ppo.policy_edges import TransformerConvEdge
+from hppo.policy_edges import TransformerConvEdge
 
 class PopArtLinear(nn.Module):
     """

@@ -13,7 +13,7 @@ import wandb
 #from torch_scatter import gather_csr, scatter, segment_csr
 from .helper import device, floatType, intType
 import numpy as np
-from ppo.policy_edges import TransformerConvEdge
+from hppo.policy_edges import TransformerConvEdge
 
 class TransformerAttachedPolicy(nn.Module):
     def __init__(self, state_metadata,action_metadata,config,action_attach = 'block'):

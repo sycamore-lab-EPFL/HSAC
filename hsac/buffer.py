@@ -1,6 +1,6 @@
 import time
 import numpy as np
-from ppo.buffer import RolloutBufferGNN
+from hppo.buffer import RolloutBufferGNN
 import torch
 import torch_geometric
 import wandb

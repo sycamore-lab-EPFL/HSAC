@@ -5,7 +5,7 @@ import os
 import polyscope.imgui as psim
 import polyscope as ps
 import warp as wp
-obj_folder_path = './gym/static_envs/simulator/cont3Dsimulator/data/arch'
+obj_folder_path = './simulator/cont3Dsimulator/data/arch'
 objs = []
 wp.set_device("cpu")
 wp.config.mode = "debug"

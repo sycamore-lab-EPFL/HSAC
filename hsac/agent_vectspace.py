@@ -5,8 +5,8 @@ from warnings import warn
 from matplotlib import pyplot as plt
 from .her_buffer import HERReplayBufferGNN
 from .prefilled_buffer import PrefilledReplayBufferGNN
-from sac.policy_edges import TransformerGFTFPolicy
-from sac.valuefunction_edges import TransformerGFTFValue
+from hsac.policy_edges import TransformerGFTFPolicy
+from hsac.valuefunction_edges import TransformerGFTFValue
 import torch
 import numpy as np
 from torch import nn

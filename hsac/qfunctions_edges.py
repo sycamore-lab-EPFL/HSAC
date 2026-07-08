@@ -1,4 +1,4 @@
-from ppo.policy_edges import TransformerConvEdge
+from hppo.policy_edges import TransformerConvEdge
 from torch import nn
 import torch
 import torch.nn.functional as F

@@ -1,0 +1,24 @@
+# Core scientific stack
+numpy
+scipy
+shapely
+trimesh
+matplotlib
+
+# Deep learning
+torch
+torch_geometric
+
+# RL environment API
+gymnasium
+
+# Simulation / optimization (Gurobi requires a license: https://www.gurobi.com)
+warp-lang
+gurobipy
+piqp
+
+# Rendering
+polyscope
+
+# Experiment logging (used in offline mode by default; no account required)
+wandb

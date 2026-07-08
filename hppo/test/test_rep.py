@@ -1,4 +1,4 @@
-import ppo
+import hppo
 import masongraph_envs
 import wandb
 import torch
@@ -38,8 +38,8 @@ env = masongraph_envs.MasonGraphCover(n_batch=config['n_batch'],
                                       max_area=config['max_area'],
                                       min_area=config['min_area'],
                                       ground_width=config['ground_width'],autoreset=False)
-agent = ppo.PPO(env.state_metadata(),env.action_metadata(),wandb.config)
-#ppo.rollout_asyn(agent, env, render = False)
+agent = hppo.PPO(env.state_metadata(),env.action_metadata(),wandb.config)
+#hppo.rollout_asyn(agent, env, render = False)
 states, info = env.reset()
 agent.buffer.clear(env.n_batch)
 

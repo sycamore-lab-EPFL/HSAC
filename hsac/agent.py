@@ -6,10 +6,10 @@ from matplotlib import pyplot as plt
 
 from .her_buffer import HERReplayBufferGNN
 from .prefilled_buffer import PrefilledReplayBufferGNN
-from sac.policy_edges import TransformerGFTFPolicy
-from sac.policy_ad_node import TransformerAttachedPolicy
-from sac.qfunctions_ad_node import TransformerAttachedQ
-from sac.valuefunction_edges import TransformerGFTFValue
+from hsac.policy_edges import TransformerGFTFPolicy
+from hsac.policy_ad_node import TransformerAttachedPolicy
+from hsac.qfunctions_ad_node import TransformerAttachedQ
+from hsac.valuefunction_edges import TransformerGFTFValue
 import torch
 import numpy as np
 from torch import nn

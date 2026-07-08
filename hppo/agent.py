@@ -1,8 +1,8 @@
 import pickle
 from time import perf_counter
 from warnings import warn
-from ppo.policy_edges import TransformerGFTFSharedEncoder
-from ppo.policy_ad_node import TransformerAttachedSharedEncoder
+from hppo.policy_edges import TransformerGFTFSharedEncoder
+from hppo.policy_ad_node import TransformerAttachedSharedEncoder
 import torch
 from torch.distributions import Categorical
 import numpy as np

@@ -1,5 +1,5 @@
 import masongraph_envs
-import ppo
+import hppo
 import wandb
 import os
 import pickle
@@ -31,6 +31,6 @@ def load_artifact(artifact_name):
                                       max_blocks=config['max_blocks'],
                                       vertical=True,
                                       autoreset=False)
-    agent = ppo.PPO(env.state_metadata(),env.action_metadata(),wandb.config)
+    agent = hppo.PPO(env.state_metadata(),env.action_metadata(),wandb.config)
     agent.policy_old.load_state_dict(artifact['state_dict'])
     return agent,env

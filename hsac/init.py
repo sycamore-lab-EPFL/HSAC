@@ -1,5 +1,5 @@
 
-import sac
+import hsac
 import wandb
 import os
 import pickle
@@ -69,9 +69,9 @@ def load_artifact(artifact_name,batchsize=None):
     if not hasattr(wandb.config,'heads'):
         wandb.config.update({"heads":1},allow_val_change=True)
     if config['ground_gen'] == 'aligned':
-        agent = sac.SAC(env.state_metadata(),env.action_metadata(),wandb.config,attach='action_discrete')
+        agent = hsac.SAC(env.state_metadata(),env.action_metadata(),wandb.config,attach='action_discrete')
     else:
-        agent = sac.SAC(env.state_metadata(),env.action_metadata(),wandb.config)
+        agent = hsac.SAC(env.state_metadata(),env.action_metadata(),wandb.config)
     agent.policy.load_state_dict(artifact['pol_state_dict'])
     agent.qfunction[0].load_state_dict(artifact['qf0_state_dict'])
     agent.qfunction[1].load_state_dict(artifact['qf1_state_dict'])
@@ -102,7 +102,7 @@ def load_artifact_mujoco(artifact_name):
                                 env_name=config['env_name'],
                                 n_modes=config['n_modes'],
                                 render_mode='rgb_array',)                                              
-    agent = sac.SACvec(env.state_metadata(),env.action_metadata(),wandb.config,attach = 'central')
+    agent = hsac.SACvec(env.state_metadata(),env.action_metadata(),wandb.config,attach = 'central')
     agent.policy.load_state_dict(artifact['pol_state_dict'])
     agent.qfunction[0].load_state_dict(artifact['qf0_state_dict'])
     agent.qfunction[1].load_state_dict(artifact['qf1_state_dict'])

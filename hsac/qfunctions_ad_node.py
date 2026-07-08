@@ -1,5 +1,5 @@
-from ppo.policy_edges import TransformerConvEdge
-from sac.valuefunction_edges import PopArtLinear
+from hppo.policy_edges import TransformerConvEdge
+from hsac.valuefunction_edges import PopArtLinear
 from torch import nn
 import torch
 import torch.nn.functional as F

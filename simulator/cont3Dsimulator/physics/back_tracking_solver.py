@@ -68,9 +68,9 @@ class PhysicsBackTrackSolver(BackTrackSolver):
 
     
 if __name__ == "__main__":
-    import static_envs
+    import masongraph_envs
     from simulator.cont3Dsimulator.batchsim import activeUI
-    env = static_envs.StraightMasonGraphCover(n_batch=1,max_blocks=80,use_batchsolver=True,physics_on=True,tol=1e-2,ground_gen='around',autoreset=False)
+    env = masongraph_envs.StraightMasonGraphCover(n_batch=1,max_blocks=80,use_batchsolver=True,physics_on=True,tol=1e-2,ground_gen='around',autoreset=False)
     env.reset()
     activeUI(env.sim)
     phymodel = PhysicsBackTrackSolver(blocks=env.sim.assembly_sequence, contacts=env.sim.contacts)

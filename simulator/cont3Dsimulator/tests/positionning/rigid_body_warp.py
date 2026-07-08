@@ -6,7 +6,7 @@ import math
 import numpy as np
 
 class Example:
-    def __init__(self, block_folder='./gym/static_envs/simulator/cont3Dsimulator/data/arch'):
+    def __init__(self, block_folder='./simulator/cont3Dsimulator/data/arch'):
         builder = wp.sim.ModelBuilder()
 
         self.sim_time = 0.0

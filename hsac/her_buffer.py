@@ -1,5 +1,5 @@
 import numpy as np
-from sac.buffer import ReplayBufferGNN
+from hsac.buffer import ReplayBufferGNN
 
 
 import torch

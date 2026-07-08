@@ -6,7 +6,7 @@ import polyscope.imgui as psim
 import polyscope as ps
 import warp as wp
 wp.set_device("cpu")
-obj = trimesh.load('./gym/static_envs/simulator/cont3Dsimulator/data/test/simplex.obj', force='mesh')
+obj = trimesh.load('./simulator/cont3Dsimulator/data/test/simplex.obj', force='mesh')
 assert obj.is_watertight, "Sanitize the blocks first"
 tol = 1e-1
 sim = sim3D.BatchSimulator(n_batch=1,tol=tol,max_dist =2,max_action_steps=2, use_mortar=True, mortar_thickness=2*tol)

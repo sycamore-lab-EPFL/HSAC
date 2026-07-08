@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hsac"
+version = "0.1.0"
+description = "Hybrid Soft Actor-Critic (HSAC) for plan-free robotic construction"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Gabriel Vallat" },
+    { name = "Maryam Kamgarpour" },
+    { name = "Stefana Parascho" },
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "shapely",
+    "trimesh",
+    "matplotlib",
+    "torch",
+    "torch_geometric",
+    "gymnasium",
+    "warp-lang",
+    "gurobipy",
+    "piqp",
+    "polyscope",
+    "wandb",
+]
+
+[project.optional-dependencies]
+# Legacy hexagonal-grid environments / pygame renderer (not needed for the paper's
+# continuous 3D arch experiments). Requires the separate hex_envs / hexsimulator packages.
+legacy = ["pygame"]
+
+[project.urls]
+Repository = "https://github.com/sycamore-lab-EPFL/HSAC"
+
+# The four importable top-level packages live at the repository root.
+[tool.setuptools]
+packages = ["hsac", "hppo", "simulator", "masongraph_envs"]
+
+[tool.setuptools.package-dir]
+"" = "."

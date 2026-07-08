@@ -745,7 +745,7 @@ if __name__ == "__main__":
     import os
     import polyscope as ps
 
-    obj_folder_path = './gym/static_envs/simulator/cont3Dsimulator/data/arch'
+    obj_folder_path = './simulator/cont3Dsimulator/data/arch'
     objs = []
     for f in os.listdir(obj_folder_path):
         file_path = os.path.join(obj_folder_path, f)
