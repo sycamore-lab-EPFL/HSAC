@@ -1,1 +1,14 @@
 *.pyc
+__pycache__/
+
+# training / experiment outputs
+models/
+wandb/
+*.pol
+
+# python packaging / envs
+*.egg-info/
+.venv/
+venv/
+build/
+dist/

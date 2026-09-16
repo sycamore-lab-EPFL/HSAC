@@ -5,6 +5,10 @@
 #SBATCH --partition l40s
 #SBATCH --gpus 1
 #SBATCH --time 24:00:00
+
+# Example SLURM script. Adjust the partition/module/env activation for your site.
+# Submit from the repository root, e.g.:  sbatch experiments/HyperHSAC/exp_deterministic.run
 module load gurobi
-cd /home/grvallat/RoboticConstruction/code/
-/home/grvallat/venvs/venv-opt/bin/python /home/grvallat/RoboticConstruction/code/scripts/experiments/HyperHSAC/run_exp_deterministic.py
+cd "${SLURM_SUBMIT_DIR:-$(pwd)}"
+
+python experiments/HyperHSAC/run_exp_deterministic.py

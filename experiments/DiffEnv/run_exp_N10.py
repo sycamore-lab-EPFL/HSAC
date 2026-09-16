@@ -1,11 +1,18 @@
+import os, sys
+# Make the repo-root packages (hsac, hppo, simulator, masongraph_envs) importable
+# regardless of the current working directory.
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import json
 import torch
 import numpy as np
 import wandb
 import time
-import sac
+import hsac
 import warp as wp
-config_file = "scripts/experiments/config.json"
+config_file = os.environ.get(
+    "HSAC_CONFIG",
+    os.path.join(os.path.dirname(__file__), "..", "config.json"),
+)
 
 with open(config_file) as json_file:
     print(f"load parameter from {config_file}")
@@ -15,7 +22,11 @@ config['scales'] = np.linspace(5,20,10)
 config['max_actiond']= len(config['scales'])
 config['model_name']='HSAC_N10_v2'
 
-wandb.init(mode='online' if config['online'] else 'offline',project="RoboticConstruction", config=config)
+wandb.init(
+    mode=os.environ.get("WANDB_MODE", "online" if config['online'] else "offline"),
+    project=os.environ.get("WANDB_PROJECT", "RoboticConstruction"),
+    config=config,
+)
 wp.config.mode = 'release'
 wp.set_device('cuda')  # Set to 'cpu' if you want to run on CPU
 import masongraph_envs
@@ -42,9 +53,9 @@ env = masongraph_envs.ColumnMasonGraph(n_batch=config['n_batch'],
                                         her=config['her'])
 
 print(f"Warp mode: {wp.get_device()}, {wp.config.mode}")
-agent = sac.SAC(env.state_metadata(),env.action_metadata(),wandb.config,attach='action_discrete')
+agent = hsac.SAC(env.state_metadata(),env.action_metadata(),wandb.config,attach='action_discrete')
 print("START TIMER")
 t0 = time.perf_counter()
-sac.train(agent,env,render_freq=100)
+hsac.train(agent,env,render_freq=100)
 t1 = time.perf_counter()
 print(f"Training took {t1-t0} seconds")

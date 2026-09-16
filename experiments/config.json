@@ -1,7 +1,7 @@
 
 {
     "model_name":"DefaultModel",
-    "online":true,
+    "online":false,
     "max_blocks":30,
     "n_batch":16,
     "deterministic_rollout":false,
